@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Spa - Luxury Salon & Wellness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        /* ---------------------------------------------------- */
+        /* CSS: Salon / Spa Website (Elegant & Earth Tones) */
+        /* ---------------------------------------------------- */
+        :root {
+            --primary-color: #795548; /* Brown/Earth Tone */
+            --accent-color: #ff9800; /* Amber/Gold Accent */
+            --background-color: #fcf7f5;
+            --card-background: #ffffff;
+            --text-color: #333333;
+            --shadow-soft: 0 4px 10px rgba(0,0,0,0.05);
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* ------------------- HEADER & NAVIGATION ------------------- */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: var(--card-background);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            font-weight: 500;
+            position: relative;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ------------------- UTILITIES ------------------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: transform 0.3s, background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(121, 85, 72, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #5d4037;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(121, 85, 72, 0.5);
+        }
+
+        /* ------------------- HERO SECTION ------------------- */
+        #hero {
+            /* Image: Luxury spa/salon interior (Direct Google Link) */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_x_P3o4X4X8O9v0O1Z1d4x5B7X4C9x4C9x4A&usqp=CAU') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        #hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* ------------------- SERVICES SECTION ------------------- */
+        #services {
+            background-color: var(--background-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-background);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card img {
+            /* Image: Placeholder for Service (Hair/Massage/Facial) (Direct Google Link) */
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .service-info .price {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .service-info p {
+            font-size: 0.95rem;
+            color: #757575;
+        }
+
+        /* ------------------- BOOKING SECTION ------------------- */
+        #booking {
+            text-align: center;
+        }
+
+        .booking-content {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 30px;
+            border-radius: var(--border-radius);
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .booking-content .section-title {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: var(--text-color);
+            transition: box-shadow 0.3s;
+        }
+        
+        .booking-form input:focus, .booking-form select:focus {
+            box-shadow: 0 0 0 2px var(--accent-color);
+            outline: none;
+        }
+        
+        #confirm-appointment-btn {
+            width: 100%;
+            background-color: var(--accent-color);
+            padding: 15px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        
+        #confirm-appointment-btn:hover {
+            background-color: #e68a00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 152, 0, 0.5);
+        }
+
+        /* ------------------- FOOTER ------------------- */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3e2723;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        /* ------------------- RESPONSIVENESS ------------------- */
+        @media (max-width: 768px) {
+            #hero {
+                height: 400px;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .nav-links {
+                /* Simple mobile adjustment: can be replaced with a hamburger menu */
+                display: none; 
+            }
+            .header {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Aura Spa</div>
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#booking">Book Now</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Your Sanctuary of Serenity</h1>
+            <p>Indulge in luxury treatments designed to relax, restore, and rejuvenate your body and mind.</p>
+            <a href="#booking" class="btn">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Signature Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR61yO83_Pz-hH5j0N3f5Q6v9g4x3W_2-F4A&usqp=CAU" alt="Relaxing Massage">
+                    <div class="service-info">
+                        <h4>Aromatherapy Massage</h4>
+                        <span class="price">From $75 (60 min)</span>
+                        <p>A full-body treatment using therapeutic essential oils to relieve stress and tension.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1-yS9yM8f_tH5j1N3F5Q6v9g4x3W_2-F4A&usqp=CAU" alt="Deep Cleansing Facial">
+                    <div class="service-info">
+                        <h4>Deep Cleansing Facial</h4>
+                        <span class="price">From $60 (45 min)</span>
+                        <p>Revitalize your skin with a customized deep cleansing, exfoliation, and hydration mask.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7T9k3fR4x5q7h2N1X7-4V6P7c2T3Q2L8B1Q&usqp=CAU" alt="Professional Haircut">
+                    <div class="service-info">
+                        <h4>Designer Haircut & Styling</h4>
+                        <span class="price">From $40</span>
+                        <p>Expert cuts and professional styling tailored to your unique look and preference.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="container booking-content">
+            <h2 class="section-title">Book Your Moment of Calm</h2>
+            <form id="appointment-form" class="booking-form">
+                <div class="form-group">
+                    <input type="text" id="appt-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="appt-phone" placeholder="WhatsApp Number (e.g., 9198xxxxxx)" required>
+                </div>
+                <div class="form-group">
+                    <select id="appt-service" required>
+                        <option value="">Select Service</option>
+                        <option value="Aromatherapy Massage ($75)">Aromatherapy Massage ($75)</option>
+                        <option value="Deep Cleansing Facial ($60)">Deep Cleansing Facial ($60)</option>
+                        <option value="Designer Haircut & Styling ($40)">Designer Haircut & Styling ($40)</option>
+                        <option value="Manicure/Pedicure">Manicure/Pedicure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="appt-date" required>
+                </div>
+                <div class="form-group">
+                    <select id="appt-time" required>
+                        <option value="">Select Time Slot</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                    </select>
+                </div>
+                <button type="submit" id="confirm-appointment-btn" class="btn">Confirm Appointment on WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Aura Spa. Wellness, Beauty, Serenity.
+    </footer>
+
+    <script>
+        /* ---------------------------------------------------- */
+        /* JS: Salon / Spa Website (WhatsApp Integration)   */
+        /* ---------------------------------------------------- */
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('appt-name').value.trim();
+            const phone = document.getElementById('appt-phone').value.trim();
+            const service = document.getElementById('appt-service').value;
+            const date = document.getElementById('appt-date').value;
+            const time = document.getElementById('appt-time').value;
+            
+            if (!name || !phone || !service || !date || !time) {
+                alert('Please fill out all appointment details.');
+                return;
+            }
+
+            // **TODO:** REPLACE THIS NUMBER with your actual WhatsApp Business number (e.g., '919876543210')
+            const whatsappNumber = '919876543210'; 
+
+            let message = `Hello Aura Spa, I would like to book an appointment.%0A%0A`;
+            message += `*Name:* ${name}%0A`;
+            message += `*Phone/WhatsApp:* ${phone}%0A`;
+            message += `*Service:* ${service}%0A`;
+            message += `*Preferred Date:* ${date}%0A`;
+            message += `*Preferred Time:* ${time}%0A%0A`;
+            message += `Please confirm the booking and send payment details if required. Thank you!`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
